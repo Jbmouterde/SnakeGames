@@ -1,0 +1,14 @@
+.snakeHeader{
+    color : blue;
+
+}
+
+.gameCanvas{
+    /* background-image: url(./images/br.png); */
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+
+
+}
+
