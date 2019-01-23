@@ -1,6 +1,6 @@
 
 // Button 
-$("body > button").click(function(){
+$("body > div.title > button").click(function(){
   location.reload();
   // $("body > div.instructions.cache1").slideToggle(1500);
 });

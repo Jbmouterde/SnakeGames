@@ -7,8 +7,30 @@
     /* background-image: url(./images/br.png); */
     background-repeat: no-repeat;
     background-size: cover; 
-
+    float : right;
 
 
 }
 
+body {
+    background : lightblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
+}
+
+button {
+    background-color: #008CBA;
+    font-size: 12px;
+    padding: 12px 28px;
+    border-radius: 4px;
+    /* border : 10rem; */
+
+    color : white 
+}
+.title {
+    /* float : left  */
+    padding : 10rem
+}
+.timer {
+    padding-left: 5rem;
+    padding-top : 1rem;
+}
