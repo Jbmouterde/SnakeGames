@@ -3,6 +3,11 @@
 
 }
 
+#canvas {
+    /* display: none; */
+}
+
+
 .gameCanvas{
     /* background-image: url(./images/br.png); */
     background-repeat: no-repeat;

@@ -1,8 +1,8 @@
 
 // Button 
-$("body > div.title > button").click(function(){
-  location.reload();
-  // $("body > div.instructions.cache1").slideToggle(1500);
+$("body > div.title > button:nth-child(2)").click(function(){
+  // location.reload();
+  $("#canvas").slideToggle(1500);
 });
 
 $("body > header > button").click(function(){
@@ -51,11 +51,11 @@ $("body > header > button").click(function(){
            getLeft(objA)   <= getRight(objB);
   }
   // WIN 
-  function win(win){
-    if(hero.y < 5 && hero.x === 465){
-      window.location.href = "index.html"
-    }
-  }
+  // function win(win){
+  //   if(hero.y < 5 && hero.x === 465){
+  //     window.location.href = "index.html"
+  //   }
+  // }
   // COLLISION WITH THE BLOCKS
   function pipeCollision () {
     var hasCollided = false;
@@ -63,7 +63,7 @@ $("body > header > button").click(function(){
     allPipes.forEach(function (onePipe) {
       if (collision(hero, onePipe)){
         hasCollided = true;
-        alert("GAME OVER!!! \n"  + " You stay alive for " + sec + "sec");
+        alert("GAME OVER!!! \n"  + " You stay alive for " + sec + " sec");
         window.location.href = "index.html"
         // updateStuff(); 
         // hero.x = 450;
@@ -77,26 +77,6 @@ $("body > header > button").click(function(){
   // -----------------------------------------------------------------------------
   
 
-//background 
-  // var bg = new Image();
-  // bg.src = "./images/back.png";
-  // function initCanvas(){
-  //   var ctx = document.getElementById('.gameCanvas').getContext('2d');
-  //   var cW = ctx.canvas.width, cH = ctx.canvas.height;
-  // function Background(){
-  //   this.x = 0 , this.y = 0, this.w = bg.width , this.h = bg.height;
-  //   this.render = function(){
-  //     ctx.drawImage(bg, this.x-=3, 0);
-  //     if(this.x <= 0){
-  //       this.x = 0; 
-  //     }
-  //   }
-  // }
-  // var background = new Background();
-
-  //   ctx.save();
-  //   background.render();
-  // }
 
 
   var canvas = document.querySelector(".gameCanvas");
@@ -176,6 +156,9 @@ $("body > header > button").click(function(){
       ctx.clearRect(bonus2Image);
      }
   };
+
+
+
   
   ///////////////////////
   var pipeImage = new Image();
@@ -188,34 +171,44 @@ $("body > header > button").click(function(){
     new Pipe(pipeImage,50, 80, 30, 30),
     new Pipe(pipeImage,200, 80, 30, 30),
 
-    new Pipe(pipeImage,100, 200, 30, 30),
+    new Pipe(pipeImage,300, 200, 30, 30),
     new Pipe(pipeImage,50, 200, 30, 30),
     new Pipe(pipeImage,200, 200, 30, 30),
 
-    new Pipe(pipeImage,10, 560, 30, 30),
-    new Pipe(pipeImage,150, 560, 30, 30),
-    new Pipe(pipeImage,100, 560, 30, 30),
+    // new Pipe(pipeImage,10, 560, 30, 30),
+    // new Pipe(pipeImage,150, 560, 30, 30),
+    // new Pipe(pipeImage,100, 560, 30, 30),
 
 
-    new Pipe(pipeImage,90, 80, 30, 30),
-    new Pipe(pipeImage,40, 80, 30, 30),
-    new Pipe(pipeImage,10, 80, 30, 30),
+    // new Pipe(pipeImage,90, 80, 30, 30),
+    // new Pipe(pipeImage,40, 80, 30, 30),
+    // new Pipe(pipeImage,10, 80, 30, 30),
 
-    new Pipe(pipeImage,10, 50, 30, 30),
-    new Pipe(pipeImage,50, 50, 30, 30),
-    new Pipe(pipeImage,20, 50, 30, 30),
+    // new Pipe(pipeImage,10, 50, 30, 30),
+    // new Pipe(pipeImage,50, 50, 30, 30),
+    // new Pipe(pipeImage,20, 50, 30, 30),
 
     new Pipe(pipeImage,500, 150, 30, 30),
     new Pipe(pipeImage,500, 150, 30, 30),
     new Pipe(pipeImage,500, 150, 30, 30),
 
-    new Pipe(pipeImage,0, 800, 30, 30),
-    new Pipe(pipeImage,0, 800, 30, 30),
-    new Pipe(pipeImage,0, 800, 30, 30),
+    new Pipe(pipeImage,0, 400, 30, 30),
+    new Pipe(pipeImage,0, 400, 30, 30),
+    new Pipe(pipeImage,0, 400, 30, 30),
 
-    new Pipe(pipeImage,10, 560, 30, 30),
-    new Pipe(pipeImage,150, 560, 30, 30),
-    new Pipe(pipeImage,100, 560, 30, 30),
+
+    
+    new Pipe(pipeImage,200, 265, 30, 30),
+    new Pipe(pipeImage,20, 265, 30, 30),
+    new Pipe(pipeImage,100, 265, 30, 30),
+
+    // new Pipe(pipeImage,200, 205, 30, 30),
+    // new Pipe(pipeImage,20, 205, 30, 30),
+    // new Pipe(pipeImage,100, 205, 30, 30),
+
+    // new Pipe(pipeImage,10, 560, 30, 30),
+    // new Pipe(pipeImage,150, 560, 30, 30),
+    // new Pipe(pipeImage,100, 560, 30, 30),
     // new Pipe(pipeImage,300, 80, 30, 30),
 
 
@@ -230,8 +223,10 @@ $("body > header > button").click(function(){
     // ctx.clearRect(0, 0, cW, cH);
 
   // CALL FONCTION WIN
-   win(win);
+  //  win(win);
     // DRAW BONUS
+    // bonus3.drawMe();
+
     bonus.drawMe();
     if (bonus.x <= -bonus.width) {
       bonus.x = canvas.width;
@@ -242,7 +237,9 @@ $("body > header > button").click(function(){
     }
   // DRAW HERO
     hero.drawMe()
-
+    // if (onePipe.x <= -onePipe.width) {
+    //   onePipe.x = canvas.width;
+    // }
   // DRAW THE ENNEMIES
   allPipes.forEach(function (onePipe) {
     onePipe.x -= Math.floor(Math.random()* 5)
@@ -362,9 +359,9 @@ $("body > header > button").click(function(){
 
   
     switch (event.keyCode) {
-      // case 38: // up arrow
-      //   hero.y -= 15;
-      //   break;
+      case 38: // up arrow
+        hero.y -= 15;
+        break;
         
       case 32: // space
         hero.y -= 50;
@@ -392,3 +389,7 @@ $("body > header > button").click(function(){
       document.getElementById("seconds").innerHTML=pad(++sec%60);
       document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
   }, 1000);
+
+
+
+
