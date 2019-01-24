@@ -5,7 +5,7 @@ $("body > div.title > button:nth-child(2)").click(function(){
   $("#canvas").slideToggle(1500);
 });
 
-$("body > header > button").click(function(){
+$("body > div.title > button:nth-child(3)").click(function(){
     location.reload();
     // $("body > div.instructions.cache1").slideToggle(1500);
   });
